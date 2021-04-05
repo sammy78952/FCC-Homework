@@ -1,0 +1,4 @@
+function alertfunction(){
+	alert("HI");
+}
+
