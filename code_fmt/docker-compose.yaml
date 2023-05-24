@@ -1,0 +1,20 @@
+version: "1"
+services:
+    uploader:
+        build:
+            context: .
+            dockerfile: uploader.dockerfile
+        environment:
+            - MYSQL_ROOT_PASSWORD=password
+        networks:
+            - my-network
+        ports:
+            - "8888:8888"
+    generator:
+        build:
+            context: .
+            dockerfile: generator.dockerfile
+        networks: 
+         - my-network
+networks:
+    my-network:
